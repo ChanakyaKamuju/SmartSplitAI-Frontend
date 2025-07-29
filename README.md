@@ -1,5 +1,7 @@
 SmartSplitAI - Frontend
+
 📱 Overview
+
 This repository contains the frontend user interface for SmartSplitAI, a web application designed to help groups manage shared expenses, treasure funds, and recurring duties. Built with React and Vite, it provides an intuitive and responsive experience for users to organize their financial and task-based interactions within shared rooms.
 
 ✨ Features
