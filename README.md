@@ -85,7 +85,7 @@ The SmartSplitAI Backend running locally or deployed.
 Installation
 Clone the repository:
 
-git clone https://github.com/YOUR_GITHUB_USERNAME/SmartSplitAI-Frontend.git
+git clone https://github.com/ChanakyaKamuju/SmartSplitAI-Frontend.git
 cd SmartSplitAI-Frontend
 
 (Replace YOUR_GITHUB_USERNAME with your actual GitHub username).
