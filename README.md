@@ -1,4 +1,5 @@
 SmartSplitAI - Backend
+
 📊 Overview
 This repository contains the backend API for SmartSplitAI, a comprehensive expense splitting and room management application. It provides a robust and secure foundation for managing users, rooms, expenses, treasure funds, and duties, enabling seamless financial organization among groups.
 
