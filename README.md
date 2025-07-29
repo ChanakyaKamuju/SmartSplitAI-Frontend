@@ -1,83 +1,90 @@
-SmartSplitAI - Backend
-
-📊 Overview
-This repository contains the backend API for SmartSplitAI, a comprehensive expense splitting and room management application. It provides a robust and secure foundation for managing users, rooms, expenses, treasure funds, and duties, enabling seamless financial organization among groups.
+SmartSplitAI - Frontend
+📱 Overview
+This repository contains the frontend user interface for SmartSplitAI, a web application designed to help groups manage shared expenses, treasure funds, and recurring duties. Built with React and Vite, it provides an intuitive and responsive experience for users to organize their financial and task-based interactions within shared rooms.
 
 ✨ Features
-User Authentication: Secure user registration, login, and session management using JWT.
+User Authentication: Register and log in to access your rooms.
+
+Dashboard: View and navigate to all rooms you are a member of.
 
 Room Management:
 
-Create unique rooms with short, shareable IDs.
+Create new rooms with unique shareable IDs.
 
-Join existing rooms.
+Join existing rooms using a Room ID.
 
-Manage room members (add, remove, change roles - admin-only).
+View detailed room information, including members.
 
-Leave rooms (with debt checks).
+Expense Splitting:
 
-Delete rooms (admin-only, with checks for members, expenses, and treasure transactions).
+Add and manage expenses with various split types: Equal, Unequal, Percentage, and Shares.
 
-Expense Management:
+View a history of all expenses in a room.
 
-Add expenses with various split types: Equal, Unequal, Percentage, and Shares.
+Delete expenses (if authorized).
 
-Delete expenses (by payer or admin).
+See real-time balance calculations and simplified "who owes whom" breakdowns.
 
-Calculate real-time balances and simplified debts within a room.
+"Settle Up" debts directly from the UI.
 
-"Settle Up" debts by generating new settlement expenses.
+Treasure Fund:
 
-Treasure Fund Management:
+View the current balance of the room's shared treasure fund.
 
-Add/Deduct funds from a shared room treasure (admin-only).
+Add or deduct funds from the treasure (admin-only).
 
-View treasure transaction history.
+Track a history of all treasure transactions.
 
-Delete individual treasure transactions (by creator or admin).
+Delete individual treasure transactions (if authorized).
+
+Member Management:
+
+View all members in a room.
+
+Add new members by email (admin-only).
+
+Remove members (admin-only, with checks for outstanding debts).
+
+Change member roles (admin-only).
+
+Leave a room (with checks for outstanding debts).
 
 Duty Time Table:
 
-Manage recurring duties for room members.
+Configure and manage recurring duties for room members.
 
-Track duty assignments and rotations.
+Assign and rotate duties among members.
 
-Data Persistence: MongoDB database integration using Mongoose.
+Responsive Design: Optimized for various screen sizes (mobile, tablet, desktop).
 
 🚀 Technologies Used
-Node.js: JavaScript runtime environment.
+React.js: JavaScript library for building user interfaces.
 
-Express.js: Web application framework for Node.js.
+Vite: Fast build tool for modern web projects.
 
-MongoDB: NoSQL database for data storage.
+Tailwind CSS: Utility-first CSS framework for rapid UI development.
 
-Mongoose: ODM (Object Data Modeling) library for MongoDB and Node.js.
+React Router DOM: For declarative routing in the application.
 
-JSON Web Tokens (JWT): For secure user authentication.
+Axios: Promise-based HTTP client for API requests.
 
-Bcrypt.js: For password hashing.
-
-express-async-handler: Simple middleware for handling exceptions in async Express routes.
-
-CORS: Middleware for enabling Cross-Origin Resource Sharing.
-
-Dotenv: For managing environment variables.
+Context API / Custom Hooks: For state management and reusable logic.
 
 🛠️ Setup & Local Development
-To get the backend up and running on your local machine:
+To get the frontend up and running on your local machine:
 
 Prerequisites
 Node.js (LTS version recommended)
 
 npm (Node Package Manager)
 
-MongoDB (local installation or a cloud service like MongoDB Atlas)
+The SmartSplitAI Backend running locally or deployed.
 
 Installation
 Clone the repository:
 
-git clone https://github.com/ChanakyaKamuju/SmartSplitAI-Backend.git
-cd SmartSplitAI-Backend
+git clone https://github.com/YOUR_GITHUB_USERNAME/SmartSplitAI-Frontend.git
+cd SmartSplitAI-Frontend
 
 (Replace YOUR_GITHUB_USERNAME with your actual GitHub username).
 
@@ -85,39 +92,23 @@ Install dependencies:
 
 npm install
 
-Create a .env file:
-In the root of the backend folder, create a file named .env and add the following environment variables.
+Create a .env.development file:
+In the root of the frontend folder, create a file named .env.development and add the following environment variable:
 
-If using a local MongoDB, ensure your MongoDB server is running.
+VITE_APP_API_URL=http://localhost:5000/api
 
-If using MongoDB Atlas, get your connection string from the Atlas dashboard.
+Note: This VITE_APP_API_URL should point to your locally running backend API (or your deployed backend API if you're testing against that).
 
-NODE_ENV=development
-PORT=5000
-MONGO_URI=mongodb://localhost:27017/smartsplitai # Or your MongoDB Atlas connection string
-JWT_SECRET=yourdevjwtsecret_replace_with_a_strong_random_string
-FRONTEND_URL=http://localhost:5173 # Or the URL of your frontend development server
+Running the Application
+To start the frontend development server:
 
-Note: JWT_SECRET should be a long, random string. FRONTEND_URL is important for CORS.
+npm run dev
 
-Running the Server
-To start the backend server in development mode:
+The application will open in your browser, usually at http://localhost:5173.
 
-npm run server
+Building for Production
+To create a production-ready build of the application:
 
-The server will run on http://localhost:5000 (or your specified PORT).
+npm run build
 
-🌐 API Endpoints Overview
-The API provides endpoints for:
-
-/api/users: User registration, login, user data.
-
-/api/rooms: Room creation, joining, details, member management, room deletion, leaving.
-
-/api/expenses: Adding, deleting, listing expenses, and calculating balances.
-
-/api/treasure: Managing room treasure funds and transactions.
-
-/api/duties: Managing recurring duties for rooms.
-
-Detailed endpoint documentation (e.g., specific HTTP methods, request/response bodies) can be found by inspecting the route files in routes/ and controller functions in controllers/.
+This will generate a dist folder containing the optimized static files.
