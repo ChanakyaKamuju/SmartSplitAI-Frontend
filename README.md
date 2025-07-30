@@ -88,8 +88,6 @@ Clone the repository:
 git clone https://github.com/ChanakyaKamuju/SmartSplitAI-Frontend.git
 cd SmartSplitAI-Frontend
 
-(Replace YOUR_GITHUB_USERNAME with your actual GitHub username).
-
 Install dependencies:
 
 npm install
